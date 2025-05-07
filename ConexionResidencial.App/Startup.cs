@@ -94,24 +94,24 @@ namespace ConexionResidencial.App
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseSwagger(options =>
-            {
-                options.PreSerializeFilters.Add((swagger, httpReq) =>
-                {
-                    if (httpReq.Headers.ContainsKey("X-Forwarded-Host"))
-                    {
-                        var servers = new List<OpenApiServer>
-                        {
-                            new()
-                            {
-                                Url = $"https://{httpReq.Headers["X-Forwarded-Host"]}/ConexionResidencial"
-                            }
-                        };
+            //app.UseSwagger(options =>
+            //{
+            //    options.PreSerializeFilters.Add((swagger, httpReq) =>
+            //    {
+            //        if (httpReq.Headers.ContainsKey("X-Forwarded-Host"))
+            //        {
+            //            var servers = new List<OpenApiServer>
+            //            {
+            //                new()
+            //                {
+            //                    Url = $"https://{httpReq.Headers["X-Forwarded-Host"]}/ConexionResidencial"
+            //                }
+            //            };
 
-                        swagger.Servers = servers;
-                    }
-                });
-            });
+            //            swagger.Servers = servers;
+            //        }
+            //    });
+            //});
 
             app.UseSwaggerUI(c =>
             {
