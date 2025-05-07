@@ -6,4 +6,3 @@ obj/
 *.dll
 *.exe
 .vs/
-publish/
