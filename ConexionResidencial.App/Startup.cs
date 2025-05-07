@@ -115,11 +115,7 @@ namespace ConexionResidencial.App
 
             app.UseSwaggerUI(c =>
             {
-#if RELEASE
-                c.SwaggerEndpoint("v1/swagger.json", "ConexionResidencial V1");
-#elif DEBUG
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ConexionResidencial V1");
-#endif
                 c.DocumentTitle = "Servicios de ConexionResidencial";
                 c.DocExpansion(DocExpansion.None);
             });
